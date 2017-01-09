@@ -47,10 +47,18 @@
     <Compile Include="Book.cs" />
     <Compile Include="BookOrder.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="Comparer\AccountMoneyGrate.cs" />
+    <Compile Include="Comparer\CourseVisiterGrate.cs" />
+    <Compile Include="Comparer\KKMoneyGrate.cs" />
+    <Compile Include="Comparer\OrderingNameGrate.cs" />
+    <Compile Include="ConsoleWriter.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Doctor.cs" />
     <Compile Include="Examens.cs" />
     <Compile Include="Exams.cs" />
+    <Compile Include="Extension\BookExtension.cs" />
+    <Compile Include="Extension\OrderingExtension.cs" />
+    <Compile Include="Extension\TeacherExtension.cs" />
     <Compile Include="Facult.cs" />
     <Compile Include="Faculty.cs" />
     <Compile Include="Group.cs" />
@@ -76,6 +84,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Faculty:Group
+    public class Faculty:Group , ICloneable , IComparable<Faculty>
     {
         public Faculty()
             : base()
@@ -15,6 +15,16 @@ namespace ISMOOPHierarchy
         public Faculty(string title, List<Student> visitor)
             : base(title, visitor)
         {
+        }
+        public int CompareTo(Faculty c)
+        {
+            if (this.visitor.Count > c.visitor.Count) return 1;
+            else if (this.visitor.Count < c.visitor.Count) return -1;
+            else return 0;
+        }
+        public object Clone()
+        {
+            return new Faculty(this.GroupTitle, this.visitor);
         }
         public override void AddVisitor(Student student)
         {

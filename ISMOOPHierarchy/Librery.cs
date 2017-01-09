@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Librery:IMenu
+    public class Librery:IMenu
     {
         Book book;
         Reader reader;

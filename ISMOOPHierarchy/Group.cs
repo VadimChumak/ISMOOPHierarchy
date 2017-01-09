@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-   abstract class Group
+   public abstract class Group
     {
         protected string group_title;
         protected List<Student> visitor;

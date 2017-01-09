@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Ordering
+    public class Ordering:ICloneable , IComparable<Ordering>
     {
         private string order_title;
         private double sum_money;
@@ -18,6 +18,21 @@ namespace ISMOOPHierarchy
         public Ordering()
             : this("Unknown", 0.0)
         {
+        }
+        public int CompareTo(Ordering o)
+        {
+            int res = this.OrderPay.CompareTo(o.OrderPay);
+            if (res == 0) return this.OrderTitle.CompareTo(o.OrderTitle);
+            else return res;
+        }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+        public void Print()
+        {
+            Console.WriteLine("Назва замовлення : {0}", order_title);
+            Console.WriteLine("Вартість замовлення  : {0}", sum_money);
         }
         public string OrderTitle
         {
@@ -34,7 +49,9 @@ namespace ISMOOPHierarchy
         {
             set
             {
-                sum_money = value;
+                if (value >= 0)
+                    sum_money = value;
+                else sum_money = 0;
             }
             get
             {

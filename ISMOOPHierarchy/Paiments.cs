@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace ISMOOPHierarchy
 {
-    class Paiments
+    public class Paiments
     {
         private Client client;
         private Admin admin;

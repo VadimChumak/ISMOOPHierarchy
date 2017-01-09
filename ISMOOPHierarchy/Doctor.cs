@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Doctor:Nurse
+    public class Doctor:Nurse,ICloneable , IComparable<Doctor>
     {
         public Doctor()
             : base()
@@ -17,6 +17,19 @@ namespace ISMOOPHierarchy
             : base(name, lastname)
         {
            
+        }
+        public int CompareTo(Doctor a)
+        {
+            int res = this.name.CompareTo(a.name);
+            if (res == 0)
+            {
+                return this.lastname.CompareTo(a.lastname);
+            }
+            else return res;
+        }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
         public override void SetAppoint(Patient pat)
         {

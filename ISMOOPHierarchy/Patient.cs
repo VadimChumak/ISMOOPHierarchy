@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Patient:Person , IPersonInfo
+    public  class Patient : Person, IPersonInfo, ICloneable, IComparable<Patient>
     {
         private string appointment;
         public Patient()
@@ -18,6 +18,19 @@ namespace ISMOOPHierarchy
             : base(name, lastname)
         {
             appointment = appoint;
+        }
+        public int CompareTo(Patient p)
+        {
+            string str1 = p.appointment;
+            string[] mass = str1.Split(' ');
+            string[] arr = this.appointment.Split(' ');
+            if (arr.Length > mass.Length) return 1;
+            else if (arr.Length < mass.Length) return -1;
+            else return 0;
+        }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
         public string Appointment
         {

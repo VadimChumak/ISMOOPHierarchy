@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace ISMOOPHierarchy
 {
-    class Teacher:Person , IPersonInfo
+    public class Teacher:Person , IPersonInfo , ICloneable , IComparable<Teacher>
     {
         public Teacher()
             : base()
@@ -15,6 +14,19 @@ namespace ISMOOPHierarchy
         public Teacher(string name, string lastname)
             : base(name, lastname)
         {
+        }
+        public int CompareTo(Teacher a)
+        {
+            int res = this.name.CompareTo(a.name);
+            if (res == 0)
+            {
+                return this.lastname.CompareTo(a.lastname);
+            }
+            else return res;
+        }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
         public string Name
         {

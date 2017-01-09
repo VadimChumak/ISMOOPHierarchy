@@ -4,3 +4,9 @@ C:\Users\vadim\Desktop\Програмування\2 курс\PI\Hierarchy\ISMOOP
 C:\Users\vadim\Desktop\Програмування\2 курс\PI\Hierarchy\ISMOOPHierarchy\bin\Debug\ISMOOPHierarchy.pdb
 C:\Users\vadim\Desktop\Програмування\2 курс\PI\Hierarchy\ISMOOPHierarchy\obj\Debug\ISMOOPHierarchy.exe
 C:\Users\vadim\Desktop\Програмування\2 курс\PI\Hierarchy\ISMOOPHierarchy\obj\Debug\ISMOOPHierarchy.pdb
+C:\Users\vadim\Desktop\Програмування\2 курс\ISM\C#\Hierarchy\ISMOOPHierarchy\bin\Debug\ISMOOPHierarchy.exe.config
+C:\Users\vadim\Desktop\Програмування\2 курс\ISM\C#\Hierarchy\ISMOOPHierarchy\obj\Debug\ISMOOPHierarchy.exe
+C:\Users\vadim\Desktop\Програмування\2 курс\ISM\C#\Hierarchy\ISMOOPHierarchy\obj\Debug\ISMOOPHierarchy.pdb
+C:\Users\vadim\Desktop\Програмування\2 курс\ISM\C#\Hierarchy\ISMOOPHierarchy\obj\Debug\ISMOOPHierarchy.csprojResolveAssemblyReference.cache
+C:\Users\vadim\Desktop\Програмування\2 курс\ISM\C#\Hierarchy\ISMOOPHierarchy\bin\Debug\ISMOOPHierarchy.exe
+C:\Users\vadim\Desktop\Програмування\2 курс\ISM\C#\Hierarchy\ISMOOPHierarchy\bin\Debug\ISMOOPHierarchy.pdb

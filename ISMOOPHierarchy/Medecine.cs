@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Medecine : IMenu
+    public class Medecine : IMenu
     {
         private Patient patient;
         private Nurse nurse;

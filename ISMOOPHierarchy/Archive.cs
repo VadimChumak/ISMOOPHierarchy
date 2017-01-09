@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Archive
+    public class Archive:ICloneable , IComparable<Archive>
     {
-        struct PersonInform
+        public struct PersonInform
         {
            public string object_name;
            public Student student;
@@ -19,6 +19,32 @@ namespace ISMOOPHierarchy
         {
             info = new List<PersonInform>();
         }
+
+        public PersonInform this[int i]
+        {
+            get
+            {
+                return info[i];
+            }
+        }
+        public int CompareTo(Archive a)
+        {
+            return this.info.Count.CompareTo(a.info.Count);
+        }
+        public object Clone()
+        {
+            Archive ar = new Archive();
+            for (int i = 0; i < info.Count; i++)
+            {
+                ar.AddToArchive(info[i]);
+            }
+            return ar;
+        }
+        public void AddToArchive(PersonInform p)
+        {
+            info.Add(p);
+        }
+
         public void AddToArchive(Student st, Group gr, double mark)
         {
             PersonInform inf;

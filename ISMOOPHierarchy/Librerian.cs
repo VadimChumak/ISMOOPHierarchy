@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Librerian:Person , IPersonInfo
+    public class Librerian:Person , IPersonInfo , ICloneable , IComparable<Librerian>
     {
         private BookOrder bo;
         private List<Reader> black_list;
@@ -19,6 +19,25 @@ namespace ISMOOPHierarchy
         {
             bo = new BookOrder();
             black_list = new List<Reader>();
+        }
+        public int CompareTo(Librerian a)
+        {
+            int res = this.name.CompareTo(a.name);
+            if (res == 0)
+            {
+                return this.lastname.CompareTo(a.lastname);
+            }
+            else return res;
+        }
+        public object Clone()
+        {
+            Librerian l = new Librerian(this.Name, this.Lastname);
+            l.bo = (BookOrder)this.bo.Clone();
+            for (int i = 0; i < this.black_list.Count; i++)
+            {
+                l.black_list.Add((Reader)this.black_list[i].Clone());
+            }
+            return l;
         }
         public string Name
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Book
+    public class Book : ICloneable , IComparable<Book>
     {
         private string title;
         private bool is_free;
@@ -15,10 +15,38 @@ namespace ISMOOPHierarchy
             : this("Unknown", false)
         {
         }
+        public int CompareTo(Book b)
+        {
+            int res = this.is_free.CompareTo(b.is_free);
+            if (res == 0)
+            {
+                return this.Title.CompareTo(b.Title);
+            }
+            else return res;
+        }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
         public Book(string title, bool free)
         {
             this.title = title;
             is_free = free;
+        }
+        public string Title
+        {
+            get
+            {
+                return title;
+            }
+        }
+        public bool AreActive
+        {
+            get
+            {
+                if (is_free == true) return true;
+                else return false;
+            }
         }
         public static bool AreFree(string str)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Reader:Person , IPersonInfo
+    public class Reader:Person , IPersonInfo , ICloneable , IComparable<Reader>
     {
         private List<Book> book_on_hand;
         public Reader()
@@ -17,6 +17,21 @@ namespace ISMOOPHierarchy
             : base(name, lastname)
         {
             book_on_hand = new List<Book>();
+        }
+        public int CompareTo(Reader a)
+        {
+            if (this.book_on_hand.Count > a.book_on_hand.Count) return 1;
+            else if (this.book_on_hand.Count < a.book_on_hand.Count) return -1;
+            else return 0;
+        }
+        public object Clone()
+        {
+            Reader r = new Reader(this.Name, this.Lastname);
+            for (int i = 0; i < this.book_on_hand.Count; i++)
+            {
+                r.book_on_hand.Add((Book)this.book_on_hand[i].Clone());
+            }
+            return r;
         }
         public string Name
         {

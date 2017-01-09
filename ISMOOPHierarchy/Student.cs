@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Student:Person , IPersonInfo
+    public class Student:Person , IPersonInfo , ICloneable , IComparable<Student>
     {
        
         public Student()
@@ -17,6 +17,19 @@ namespace ISMOOPHierarchy
             : base(name, lastname)
         {
            
+        }
+        public int CompareTo(Student a)
+        {
+            int res = this.name.CompareTo(a.name);
+            if (res == 0)
+            {
+                return this.lastname.CompareTo(a.lastname);
+            }
+            else return res;
+        }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
         public string Name
         {

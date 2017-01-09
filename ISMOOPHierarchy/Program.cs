@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ISMOOPHierarchy.Comparer;
 namespace ISMOOPHierarchy
 {
     class Program
@@ -50,6 +50,6 @@ namespace ISMOOPHierarchy
                         break;
                 }
             }
-        }   
+        }
     }
 }

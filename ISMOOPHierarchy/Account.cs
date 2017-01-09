@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Account:IMoney
+    public class Account:IMoney , ICloneable , IComparable<Account>
     {
         private string account_number;
         private double money;
@@ -15,9 +15,27 @@ namespace ISMOOPHierarchy
             account_number = num;
             this.money = money;
         }
+        public object Clone()
+        {
+            return new Account(this.Num, this.Money);
+        }
         public Account()
             : this("000000000", 0.0)
         {
+        }
+        public int CompareTo(Account a)
+        {
+            if (this.Money > a.Money) return 1;
+            else if (this.Money < a.Money) return -1;
+            else
+            {
+                return this.account_number.CompareTo(a.account_number);
+            }
+        }
+        public void PrintInfo()
+        {
+            Console.WriteLine("Номер рахунку : {0}", account_number);
+            Console.WriteLine("Баланс рахунку : {0}" , money);
         }
         public double Money
         {

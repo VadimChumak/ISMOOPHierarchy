@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Examens:IMenu
+    public class Examens:IMenu
     {
         private Faculty facult;
         private Teacher teacher;

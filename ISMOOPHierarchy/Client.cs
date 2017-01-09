@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    class Client:Person , IPersonInfo
+    public class Client:Person , IPersonInfo , ICloneable , IComparable<Client>
     {
         KK card;
         Account acc;
@@ -21,6 +21,16 @@ namespace ISMOOPHierarchy
         {
             card = k;
             this.acc = acc;
+        }
+        public int CompareTo(Client c)
+        {
+            int res = this.Card.CompareTo(c.Card);
+            if (res == 0) return this.Acc.CompareTo(c.Acc);
+            else return res;
+        }
+        public object Clone()
+        {
+            return new Client(this.Name, this.Lastname, (KK)this.card.Clone(), (Account)this.acc.Clone()); 
         }
         public Account Acc
         {

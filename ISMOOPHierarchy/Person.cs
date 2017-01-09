@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISMOOPHierarchy
 {
-    abstract class Person
+    public abstract class Person
     {
         protected string name;
         protected string lastname;
